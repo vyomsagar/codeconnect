@@ -19,10 +19,11 @@ app.use((req, res, next) => {
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "*", // ✅ Allow all origins (safe here since you control the server)
     methods: ["GET", "POST"],
   },
 });
+
 
 const userSocketMap = {};
 const roomCodeMap = {}; // 🧠 Save the latest code for each room

@@ -7,7 +7,7 @@ import { io } from "socket.io-client";
         timeout: 10000,
         transports: ["websocket"]
     };
-    const backendurl = import.meta.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+    const backendurl = import.meta.env.REACT_APP_BACKEND_URL || window.location.origin;
     console.log("Backend URL:", backendurl);
     return io(backendurl, option);
 
